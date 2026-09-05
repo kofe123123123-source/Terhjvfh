@@ -1,0 +1,837 @@
+222-// Namespace: 
+223-[CompilerGenerated]
+224:internal sealed class <>f__AnonymousType0<<uid>j__TPar, <deviceId>j__TPar, <md5Signature>j__TPar, <encryptedCars>j__TPar, <encryptedRecords>j__TPar, <encryptedWallet>j__TPar> // TypeDefIndex: 1
+225-{
+226-	// Fields
+227-	private readonly <uid>j__TPar <uid>i__Field; // 0x0
+228-	private readonly <deviceId>j__TPar <deviceId>i__Field; // 0x0
+229-	private readonly <md5Signature>j__TPar <md5Signature>i__Field; // 0x0
+230-	private readonly <encryptedCars>j__TPar <encryptedCars>i__Field; // 0x0
+231-	private readonly <encryptedRecords>j__TPar <encryptedRecords>i__Field; // 0x0
+232-	private readonly <encryptedWallet>j__TPar <encryptedWallet>i__Field; // 0x0
+233-
+234-	// Properties
+235-	public <uid>j__TPar uid { get; }
+236-	public <deviceId>j__TPar deviceId { get; }
+237-	public <md5Signature>j__TPar md5Signature { get; }
+238-	public <encryptedCars>j__TPar encryptedCars { get; }
+239-	public <encryptedRecords>j__TPar encryptedRecords { get; }
+--
+113812-
+113813-// Namespace: _Car_Parking.Scripts
+113814:public class AesDecoder : IDecoder // TypeDefIndex: 3006
+113815-{
+113816-	// Methods
+113817-
+113818-	// RVA: -1 Offset: -1 Slot: 4
+113819-	public Result<T, string> Decode<T>(string data) { }
+113820-	/* GenericInstMethod :
+113821-	|
+113822-	|-RVA: 0x3FE3894 Offset: 0x3FE3894 VA: 0x3FE3894
+113823-	|-AesDecoder.Decode<int>
+113824-	|
+113825-	|-RVA: 0x3FE3918 Offset: 0x3FE3918 VA: 0x3FE3918
+113826-	|-AesDecoder.Decode<object>
+113827-	|
+113828-	|-RVA: 0x3FE39C0 Offset: 0x3FE39C0 VA: 0x3FE39C0
+113829-	|-AesDecoder.Decode<__Il2CppFullySharedGenericType>
+--
+236347-
+236348-// Namespace: Mono.Security.Cryptography
+236349:internal sealed class CryptoConvert // TypeDefIndex: 6950
+236350-{
+236351-	// Methods
+236352-
+236353-	// RVA: 0x5CB6D80 Offset: 0x5CB6D80 VA: 0x5CB6D80
+236354-	private static int ToInt32LE(byte[] bytes, int offset) { }
+236355-
+236356-	// RVA: 0x5CB6DF4 Offset: 0x5CB6DF4 VA: 0x5CB6DF4
+236357-	private static uint ToUInt32LE(byte[] bytes, int offset) { }
+236358-
+236359-	// RVA: 0x5CB6E68 Offset: 0x5CB6E68 VA: 0x5CB6E68
+236360-	private static byte[] GetBytesLE(int val) { }
+236361-
+236362-	// RVA: 0x5CB6EFC Offset: 0x5CB6EFC VA: 0x5CB6EFC
+236363-	private static byte[] Trim(byte[] array) { }
+236364-
+--
+236820-
+236821-// Namespace: Mono.Security.Cryptography
+236822:internal abstract class SymmetricTransform : ICryptoTransform, IDisposable // TypeDefIndex: 6960
+236823-{
+236824-	// Fields
+236825-	protected SymmetricAlgorithm algo; // 0x10
+236826-	protected bool encrypt; // 0x18
+236827-	protected int BlockSizeByte; // 0x1C
+236828-	protected byte[] temp; // 0x20
+236829-	protected byte[] temp2; // 0x28
+236830-	private byte[] workBuff; // 0x30
+236831-	private byte[] workout; // 0x38
+236832-	protected PaddingMode padmode; // 0x40
+236833-	protected int FeedBackByte; // 0x44
+236834-	private bool m_disposed; // 0x48
+236835-	protected bool lastBlock; // 0x49
+236836-	private RandomNumberGenerator _rng; // 0x50
+236837-
+--
+400771-[CompilerGenerated]
+400772-[Serializable]
+400773:private sealed class CryptoStream.<>c // TypeDefIndex: 7589
+400774-{
+400775-	// Fields
+400776-	public static readonly CryptoStream.<>c <>9; // 0x0
+400777-	public static Func<SemaphoreSlim> <>9__54_0; // 0x8
+400778-
+400779-	// Methods
+400780-
+400781-	// RVA: 0x5CF50B8 Offset: 0x5CF50B8 VA: 0x5CF50B8
+400782-	private static void .cctor() { }
+400783-
+400784-	// RVA: 0x5CF5114 Offset: 0x5CF5114 VA: 0x5CF5114
+400785-	public void .ctor() { }
+400786-
+400787-	// RVA: 0x5CF511C Offset: 0x5CF511C VA: 0x5CF511C
+400788-	internal SemaphoreSlim <get_AsyncActiveSemaphore>b__54_0() { }
+--
+400790-
+400791-// Namespace: System.Security.Cryptography
+400792:public class CryptoStream : Stream, IDisposable // TypeDefIndex: 7590
+400793-{
+400794-	// Fields
+400795-	private readonly Stream _stream; // 0x28
+400796-	private readonly ICryptoTransform _transform; // 0x30
+400797-	private readonly CryptoStreamMode _transformMode; // 0x38
+400798-	private byte[] _inputBuffer; // 0x40
+400799-	private int _inputBufferIndex; // 0x48
+400800-	private int _inputBlockSize; // 0x4C
+400801-	private byte[] _outputBuffer; // 0x50
+400802-	private int _outputBufferIndex; // 0x58
+400803-	private int _outputBlockSize; // 0x5C
+400804-	private bool _canRead; // 0x60
+400805-	private bool _canWrite; // 0x61
+400806-	private bool _finalBlockTransformed; // 0x62
+400807-	private SemaphoreSlim _lazyAsyncActiveSemaphore; // 0x68
+--
+400936-
+400937-// Namespace: System.Security.Cryptography
+400938:public static class CryptographicOperations // TypeDefIndex: 7592
+400939-{
+400940-	// Methods
+400941-
+400942-	// RVA: 0x5CF5178 Offset: 0x5CF5178 VA: 0x5CF5178
+400943-	public static bool FixedTimeEquals(ReadOnlySpan<byte> left, ReadOnlySpan<byte> right) { }
+400944-
+400945-	// RVA: 0x5CF3664 Offset: 0x5CF3664 VA: 0x5CF3664
+400946-	public static void ZeroMemory(Span<byte> buffer) { }
+400947-}
+400948-
+400949-// Namespace: System.Security.Cryptography
+400950:public abstract class HashAlgorithm : IDisposable, ICryptoTransform // TypeDefIndex: 7593
+400951-{
+400952-	// Fields
+400953-	private bool _disposed; // 0x10
+400954-	protected int HashSizeValue; // 0x14
+400955-	protected internal byte[] HashValue; // 0x18
+400956-	protected int State; // 0x20
+400957-
+400958-	// Properties
+400959-	public virtual int HashSize { get; }
+400960-	public virtual byte[] Hash { get; }
+400961-	public virtual int InputBlockSize { get; }
+400962-	public virtual int OutputBlockSize { get; }
+400963-	public virtual bool CanTransformMultipleBlocks { get; }
+400964-	public virtual bool CanReuseTransform { get; }
+400965-
+--
+401099-
+401100-// Namespace: System.Security.Cryptography
+401101:public sealed class RSAEncryptionPadding : IEquatable<RSAEncryptionPadding> // TypeDefIndex: 7595
+401102-{
+401103-	// Fields
+401104-	private static readonly RSAEncryptionPadding s_pkcs1; // 0x0
+401105-	private static readonly RSAEncryptionPadding s_oaepSHA1; // 0x8
+401106-	private static readonly RSAEncryptionPadding s_oaepSHA256; // 0x10
+401107-	private static readonly RSAEncryptionPadding s_oaepSHA384; // 0x18
+401108-	private static readonly RSAEncryptionPadding s_oaepSHA512; // 0x20
+401109-	private RSAEncryptionPaddingMode _mode; // 0x10
+401110-	private HashAlgorithmName _oaepHashAlgorithm; // 0x18
+401111-
+401112-	// Properties
+401113-	public static RSAEncryptionPadding Pkcs1 { get; }
+401114-	public static RSAEncryptionPadding OaepSHA1 { get; }
+401115-	public static RSAEncryptionPadding OaepSHA256 { get; }
+401116-	public static RSAEncryptionPadding OaepSHA384 { get; }
+--
+401248-// Namespace: System.Security.Cryptography
+401249-[TypeForwardedFrom("System.Core, Version=2.0.5.0, Culture=Neutral, PublicKeyToken=7cec85d7bea7798e")]
+401250:public abstract class Aes : SymmetricAlgorithm // TypeDefIndex: 7599
+401251-{
+401252-	// Fields
+401253-	private static KeySizes[] s_legalBlockSizes; // 0x0
+401254-	private static KeySizes[] s_legalKeySizes; // 0x8
+401255-
+401256-	// Methods
+401257-
+401258-	// RVA: 0x5CF6C48 Offset: 0x5CF6C48 VA: 0x5CF6C48
+401259-	protected void .ctor() { }
+401260-
+401261-	// RVA: 0x5CF6CCC Offset: 0x5CF6CCC VA: 0x5CF6CCC
+401262-	public static Aes Create() { }
+401263-
+401264-	// RVA: 0x5CF6D30 Offset: 0x5CF6D30 VA: 0x5CF6D30
+401265-	public static Aes Create(string algorithmName) { }
+--
+401461-
+401462-// Namespace: System.Security.Cryptography
+401463:public class ToBase64Transform : ICryptoTransform, IDisposable // TypeDefIndex: 7606
+401464-{
+401465-	// Properties
+401466-	public int InputBlockSize { get; }
+401467-	public int OutputBlockSize { get; }
+401468-	public bool CanTransformMultipleBlocks { get; }
+401469-	public virtual bool CanReuseTransform { get; }
+401470-
+401471-	// Methods
+401472-
+401473-	// RVA: 0x5CF7768 Offset: 0x5CF7768 VA: 0x5CF7768 Slot: 4
+401474-	public int get_InputBlockSize() { }
+401475-
+401476-	// RVA: 0x5CF7770 Offset: 0x5CF7770 VA: 0x5CF7770 Slot: 5
+401477-	public int get_OutputBlockSize() { }
+401478-
+--
+401506-
+401507-// Namespace: System.Security.Cryptography
+401508:public class FromBase64Transform : ICryptoTransform, IDisposable // TypeDefIndex: 7607
+401509-{
+401510-	// Fields
+401511-	private byte[] _inputBuffer; // 0x10
+401512-	private int _inputIndex; // 0x18
+401513-	private FromBase64TransformMode _whitespaces; // 0x1C
+401514-
+401515-	// Properties
+401516-	public int InputBlockSize { get; }
+401517-	public int OutputBlockSize { get; }
+401518-	public bool CanTransformMultipleBlocks { get; }
+401519-	public virtual bool CanReuseTransform { get; }
+401520-
+401521-	// Methods
+401522-
+401523-	// RVA: 0x5CF7C6C Offset: 0x5CF7C6C VA: 0x5CF7C6C
+--
+401626-// Namespace: System.Security.Cryptography
+401627-[Serializable]
+401628:public class CryptographicException : SystemException // TypeDefIndex: 7611
+401629-{
+401630-	// Fields
+401631-	private const int FORMAT_MESSAGE_IGNORE_INSERTS = 512;
+401632-	private const int FORMAT_MESSAGE_FROM_SYSTEM = 4096;
+401633-	private const int FORMAT_MESSAGE_ARGUMENT_ARRAY = 8192;
+401634-
+401635-	// Methods
+401636-
+401637-	// RVA: 0x5CF87B0 Offset: 0x5CF87B0 VA: 0x5CF87B0
+401638-	public void .ctor() { }
+401639-
+401640-	// RVA: 0x5CF70D4 Offset: 0x5CF70D4 VA: 0x5CF70D4
+401641-	public void .ctor(string message) { }
+401642-
+401643-	// RVA: 0x5CF8818 Offset: 0x5CF8818 VA: 0x5CF8818
+--
+401659-// Namespace: System.Security.Cryptography
+401660-[Serializable]
+401661:public class CryptographicUnexpectedOperationException : CryptographicException // TypeDefIndex: 7612
+401662-{
+401663-	// Methods
+401664-
+401665-	// RVA: 0x5CF8964 Offset: 0x5CF8964 VA: 0x5CF8964
+401666-	public void .ctor() { }
+401667-
+401668-	// RVA: 0x5CF8984 Offset: 0x5CF8984 VA: 0x5CF8984
+401669-	public void .ctor(string message) { }
+401670-
+401671-	// RVA: 0x5CF89A8 Offset: 0x5CF89A8 VA: 0x5CF89A8
+401672-	public void .ctor(string format, string insert) { }
+401673-
+401674-	// RVA: 0x5CF8A3C Offset: 0x5CF8A3C VA: 0x5CF8A3C
+401675-	public void .ctor(string message, Exception inner) { }
+401676-
+--
+401832-
+401833-// Namespace: System.Security.Cryptography
+401834:public sealed class DESCryptoServiceProvider : DES // TypeDefIndex: 7617
+401835-{
+401836-	// Methods
+401837-
+401838-	// RVA: 0x5CF9568 Offset: 0x5CF9568 VA: 0x5CF9568
+401839-	public void .ctor() { }
+401840-
+401841-	// RVA: 0x5CF98BC Offset: 0x5CF98BC VA: 0x5CF98BC Slot: 23
+401842-	public override ICryptoTransform CreateEncryptor(byte[] rgbKey, byte[] rgbIV) { }
+401843-
+401844-	// RVA: 0x5CF99EC Offset: 0x5CF99EC VA: 0x5CF99EC Slot: 25
+401845-	public override ICryptoTransform CreateDecryptor(byte[] rgbKey, byte[] rgbIV) { }
+401846-
+401847-	// RVA: 0x5CF9B1C Offset: 0x5CF9B1C VA: 0x5CF9B1C Slot: 26
+401848-	public override void GenerateKey() { }
+401849-
+--
+402571-
+402572-// Namespace: System.Security.Cryptography
+402573:public sealed class RC2CryptoServiceProvider : RC2 // TypeDefIndex: 7639
+402574-{
+402575-	// Fields
+402576-	private bool m_use40bitSalt; // 0x48
+402577-	private static KeySizes[] s_legalKeySizes; // 0x0
+402578-
+402579-	// Properties
+402580-	public override int EffectiveKeySize { get; set; }
+402581-	[ComVisible(False)]
+402582-	public bool UseSalt { get; set; }
+402583-
+402584-	// Methods
+402585-
+402586-	// RVA: 0x5D00658 Offset: 0x5D00658 VA: 0x5D00658
+402587-	public void .ctor() { }
+402588-
+--
+402672-
+402673-// Namespace: System.Security.Cryptography
+402674:public sealed class RijndaelManagedTransform : ICryptoTransform, IDisposable // TypeDefIndex: 7643
+402675-{
+402676-	// Fields
+402677-	private CipherMode m_cipherMode; // 0x10
+402678-	private PaddingMode m_paddingValue; // 0x14
+402679-	private RijndaelManagedTransformMode m_transformMode; // 0x18
+402680-	private int m_blockSizeBits; // 0x1C
+402681-	private int m_blockSizeBytes; // 0x20
+402682-	private int m_inputBlockSize; // 0x24
+402683-	private int m_outputBlockSize; // 0x28
+402684-	private int[] m_encryptKeyExpansion; // 0x30
+402685-	private int[] m_decryptKeyExpansion; // 0x38
+402686-	private int m_Nr; // 0x40
+402687-	private int m_Nb; // 0x44
+402688-	private int m_Nk; // 0x48
+402689-	private int[] m_encryptindex; // 0x50
+--
+402994-
+402995-// Namespace: System.Security.Cryptography
+402996:public sealed class RSACryptoServiceProvider : RSA, ICspAsymmetricAlgorithm // TypeDefIndex: 7648
+402997-{
+402998-	// Fields
+402999-	private static CspProviderFlags s_UseMachineKeyStore; // 0x0
+403000-	private const int PROV_RSA_FULL = 1;
+403001-	private const int AT_KEYEXCHANGE = 1;
+403002-	private const int AT_SIGNATURE = 2;
+403003-	private KeyPairPersistence store; // 0x20
+403004-	private bool persistKey; // 0x28
+403005-	private bool persisted; // 0x29
+403006-	private bool privateKeyExportable; // 0x2A
+403007-	private bool m_disposed; // 0x2B
+403008-	private RSAManaged rsa; // 0x30
+403009-
+403010-	// Properties
+403011-	public override string SignatureAlgorithm { get; }
+--
+403899-
+403900-// Namespace: System.Security.Cryptography
+403901:public sealed class TripleDESCryptoServiceProvider : TripleDES // TypeDefIndex: 7670
+403902-{
+403903-	// Methods
+403904-
+403905-	// RVA: 0x5D11500 Offset: 0x5D11500 VA: 0x5D11500
+403906-	public void .ctor() { }
+403907-
+403908-	// RVA: 0x5D119C4 Offset: 0x5D119C4 VA: 0x5D119C4 Slot: 23
+403909-	public override ICryptoTransform CreateEncryptor(byte[] rgbKey, byte[] rgbIV) { }
+403910-
+403911-	// RVA: 0x5D11AD0 Offset: 0x5D11AD0 VA: 0x5D11AD0 Slot: 25
+403912-	public override ICryptoTransform CreateDecryptor(byte[] rgbKey, byte[] rgbIV) { }
+403913-
+403914-	// RVA: 0x5D11BDC Offset: 0x5D11BDC VA: 0x5D11BDC Slot: 26
+403915-	public override void GenerateKey() { }
+403916-
+--
+403943-	internal const int KP_EFFECTIVE_KEYLEN = 19;
+403944-	internal const int ALG_CLASS_SIGNATURE = 8192;
+403945:	internal const int ALG_CLASS_DATA_ENCRYPT = 24576;
+403946-	internal const int ALG_CLASS_HASH = 32768;
+403947-	internal const int ALG_CLASS_KEY_EXCHANGE = 40960;
+403948-	internal const int ALG_TYPE_DSS = 512;
+403949-	internal const int ALG_TYPE_RSA = 1024;
+403950-	internal const int ALG_TYPE_BLOCK = 1536;
+403951-	internal const int ALG_TYPE_STREAM = 2048;
+403952-	internal const int ALG_TYPE_ANY = 0;
+403953-	internal const int CALG_MD5 = 32771;
+403954-	internal const int CALG_SHA1 = 32772;
+403955-	internal const int CALG_SHA_256 = 32780;
+403956-	internal const int CALG_SHA_384 = 32781;
+403957-	internal const int CALG_SHA_512 = 32782;
+403958-	internal const int CALG_RSA_KEYX = 41984;
+403959-	internal const int CALG_RSA_SIGN = 9216;
+403960-	internal const int CALG_DSS_SIGN = 8704;
+--
+404093-
+404094-// Namespace: System.Security.Cryptography
+404095:public sealed class CryptoAPITransform : ICryptoTransform, IDisposable // TypeDefIndex: 7674
+404096-{
+404097-	// Fields
+404098-	private bool m_disposed; // 0x10
+404099-
+404100-	// Properties
+404101-	public bool CanReuseTransform { get; }
+404102-	public bool CanTransformMultipleBlocks { get; }
+404103-	public int InputBlockSize { get; }
+404104-	public IntPtr KeyHandle { get; }
+404105-	public int OutputBlockSize { get; }
+404106-
+404107-	// Methods
+404108-
+404109-	// RVA: 0x5D12A0C Offset: 0x5D12A0C VA: 0x5D12A0C
+404110-	internal void .ctor() { }
+--
+404145-
+404146-// Namespace: System.Security.Cryptography
+404147:public class CryptoConfig // TypeDefIndex: 7675
+404148-{
+404149-	// Fields
+404150-	private static readonly object lockObject; // 0x0
+404151-	private static Dictionary<string, Type> algorithms; // 0x8
+404152-
+404153-	// Properties
+404154-	public static bool AllowOnlyFipsAlgorithms { get; }
+404155-
+404156-	// Methods
+404157-
+404158-	// RVA: 0x5D12AFC Offset: 0x5D12AFC VA: 0x5D12AFC
+404159-	public static void AddOID(string oid, string[] names) { }
+404160-
+404161-	// RVA: 0x5D060D4 Offset: 0x5D060D4 VA: 0x5D060D4
+404162-	public static object CreateFromName(string name) { }
+--
+404309-
+404310-// Namespace: System.Security.Cryptography
+404311:public sealed class DSACryptoServiceProvider : DSA, ICspAsymmetricAlgorithm // TypeDefIndex: 7678
+404312-{
+404313-	// Fields
+404314-	private const int PROV_DSS_DH = 13;
+404315-	private KeyPairPersistence store; // 0x20
+404316-	private bool persistKey; // 0x28
+404317-	private bool persisted; // 0x29
+404318-	private bool privateKeyExportable; // 0x2A
+404319-	private bool m_disposed; // 0x2B
+404320-	private DSAManaged dsa; // 0x30
+404321-	private static bool useMachineKeyStore; // 0x0
+404322-
+404323-	// Properties
+404324-	public override string KeyExchangeAlgorithm { get; }
+404325-	public override int KeySize { get; }
+404326-	public bool PersistKeyInCsp { get; set; }
+--
+404432-
+404433-// Namespace: System.Security.Cryptography
+404434:public sealed class MD5CryptoServiceProvider : MD5 // TypeDefIndex: 7679
+404435-{
+404436-	// Fields
+404437-	private const int BLOCK_SIZE_BYTES = 64;
+404438-	private uint[] _H; // 0x28
+404439-	private uint[] buff; // 0x30
+404440-	private ulong count; // 0x38
+404441-	private byte[] _ProcessingBuffer; // 0x40
+404442-	private int _ProcessingBufferCount; // 0x48
+404443-	private static readonly uint[] K; // 0x0
+404444-
+404445-	// Methods
+404446-
+404447-	// RVA: 0x5D14A24 Offset: 0x5D14A24 VA: 0x5D14A24
+404448-	public void .ctor() { }
+404449-
+--
+404501-
+404502-// Namespace: System.Security.Cryptography
+404503:public sealed class RNGCryptoServiceProvider : RandomNumberGenerator // TypeDefIndex: 7681
+404504-{
+404505-	// Fields
+404506-	private static object _lock; // 0x0
+404507-	private IntPtr _handle; // 0x10
+404508-
+404509-	// Methods
+404510-
+404511-	// RVA: 0x5D1A1A4 Offset: 0x5D1A1A4 VA: 0x5D1A1A4
+404512-	private static void .cctor() { }
+404513-
+404514-	// RVA: 0x5D1A220 Offset: 0x5D1A220 VA: 0x5D1A220
+404515-	public void .ctor() { }
+404516-
+404517-	// RVA: 0x5D1A30C Offset: 0x5D1A30C VA: 0x5D1A30C
+404518-	public void .ctor(byte[] rgb) { }
+--
+404647-
+404648-// Namespace: System.Security.Cryptography
+404649:public sealed class SHA1CryptoServiceProvider : SHA1 // TypeDefIndex: 7685
+404650-{
+404651-	// Fields
+404652-	private SHA1Internal sha; // 0x28
+404653-
+404654-	// Methods
+404655-
+404656-	// RVA: 0x5D1C3B0 Offset: 0x5D1C3B0 VA: 0x5D1C3B0
+404657-	public void .ctor() { }
+404658-
+404659-	// RVA: 0x5D1C410 Offset: 0x5D1C410 VA: 0x5D1C410 Slot: 1
+404660-	protected override void Finalize() { }
+404661-
+404662-	// RVA: 0x5D1C4B4 Offset: 0x5D1C4B4 VA: 0x5D1C4B4 Slot: 13
+404663-	protected override void Dispose(bool disposing) { }
+404664-
+--
+404697-
+404698-// Namespace: System.Security.Cryptography
+404699:public sealed class AesCcm : IDisposable // TypeDefIndex: 7687
+404700-{
+404701-	// Properties
+404702-	public static KeySizes NonceByteSizes { get; }
+404703-	public static KeySizes TagByteSizes { get; }
+404704-
+404705-	// Methods
+404706-
+404707-	// RVA: 0x5D1CA1C Offset: 0x5D1CA1C VA: 0x5D1CA1C
+404708-	public void .ctor(byte[] key) { }
+404709-
+404710-	// RVA: 0x5D1CA5C Offset: 0x5D1CA5C VA: 0x5D1CA5C
+404711-	public void .ctor(ReadOnlySpan<byte> key) { }
+404712-
+404713-	// RVA: 0x5D1CA9C Offset: 0x5D1CA9C VA: 0x5D1CA9C
+404714-	public static KeySizes get_NonceByteSizes() { }
+--
+404734-
+404735-// Namespace: System.Security.Cryptography
+404736:public sealed class AesGcm : IDisposable // TypeDefIndex: 7688
+404737-{
+404738-	// Properties
+404739-	public static KeySizes NonceByteSizes { get; }
+404740-	public static KeySizes TagByteSizes { get; }
+404741-
+404742-	// Methods
+404743-
+404744-	// RVA: 0x5D1CBF0 Offset: 0x5D1CBF0 VA: 0x5D1CBF0
+404745-	public void .ctor(byte[] key) { }
+404746-
+404747-	// RVA: 0x5D1CC30 Offset: 0x5D1CC30 VA: 0x5D1CC30
+404748-	public void .ctor(ReadOnlySpan<byte> key) { }
+404749-
+404750-	// RVA: 0x5D1CC70 Offset: 0x5D1CC70 VA: 0x5D1CC70
+404751-	public static KeySizes get_NonceByteSizes() { }
+--
+404771-
+404772-// Namespace: System.Security.Cryptography
+404773:internal static class CryptoConfigForwarder // TypeDefIndex: 7689
+404774-{
+404775-	// Methods
+404776-
+404777-	// RVA: 0x5D1CDC4 Offset: 0x5D1CDC4 VA: 0x5D1CDC4
+404778-	internal static object CreateFromName(string name) { }
+404779-
+404780-	// RVA: 0x5D1CE1C Offset: 0x5D1CE1C VA: 0x5D1CE1C
+404781-	internal static HashAlgorithm CreateDefaultHashAlgorithm() { }
+404782-}
+404783-
+404784-// Namespace: System.Security.Cryptography
+404785-public enum PbeEncryptionAlgorithm // TypeDefIndex: 7690
+404786-{
+404787-	// Fields
+404788-	public int value__; // 0x0
+--
+405438-
+405439-// Namespace: System.Security.AccessControl
+405440:public sealed class CryptoKeySecurity : NativeObjectSecurity // TypeDefIndex: 7707
+405441-{}
+405442-
+405443-// Namespace: System.Security.AccessControl
+405444-public abstract class NativeObjectSecurity : CommonObjectSecurity // TypeDefIndex: 7708
+405445-{}
+405446-
+405447-// Namespace: System.Security.AccessControl
+405448-public abstract class ObjectSecurity // TypeDefIndex: 7709
+405449-{}
+405450-
+405451-// Namespace: System.Runtime
+405452-[Serializable]
+405453-public sealed class AmbiguousImplementationException : Exception // TypeDefIndex: 7710
+405454-{
+405455-	// Methods
+--
+709533-// Namespace: 
+709534-[UnmanagedFunctionPointer(2)]
+709535:public sealed class UnityTls.unitytls_interface_struct.unitytls_tlsctx_set_supported_ciphersuites_t : MulticastDelegate // TypeDefIndex: 10313
+709536-{
+709537-	// Methods
+709538-
+709539-	// RVA: 0x616C8C4 Offset: 0x616C8C4 VA: 0x616C8C4
+709540-	public void .ctor(object object, IntPtr method) { }
+709541-
+709542-	// RVA: 0x616C964 Offset: 0x616C964 VA: 0x616C964 Slot: 13
+709543-	public virtual void Invoke(UnityTls.unitytls_tlsctx* ctx, UnityTls.unitytls_ciphersuite* supportedCiphersuites, IntPtr supportedCiphersuitesLen, UnityTls.unitytls_errorstate* errorState) { }
+709544-}
+709545-
+709546-// Namespace: 
+709547-[UnmanagedFunctionPointer(2)]
+709548:public sealed class UnityTls.unitytls_interface_struct.unitytls_tlsctx_get_ciphersuite_t : MulticastDelegate // TypeDefIndex: 10314
+709549-{
+709550-	// Methods
+709551-
+709552-	// RVA: 0x616C978 Offset: 0x616C978 VA: 0x616C978
+709553-	public void .ctor(object object, IntPtr method) { }
+709554-
+709555-	// RVA: 0x616CA18 Offset: 0x616CA18 VA: 0x616CA18 Slot: 13
+709556-	public virtual UnityTls.unitytls_ciphersuite Invoke(UnityTls.unitytls_tlsctx* ctx, UnityTls.unitytls_errorstate* errorState) { }
+709557-}
+709558-
+709559-// Namespace: 
+709560-[UnmanagedFunctionPointer(2)]
+709561-public sealed class UnityTls.unitytls_interface_struct.unitytls_tlsctx_get_protocol_t : MulticastDelegate // TypeDefIndex: 10315
+709562-{
+709563-	// Methods
+--
+917288-
+917289-// Namespace: System.Security.Cryptography
+917290:public sealed class AesManaged : Aes // TypeDefIndex: 14567
+917291-{
+917292-	// Fields
+917293-	private RijndaelManaged m_rijndael; // 0x48
+917294-
+917295-	// Properties
+917296-	public override int FeedbackSize { get; set; }
+917297-	public override byte[] IV { get; set; }
+917298-	public override byte[] Key { get; set; }
+917299-	public override int KeySize { get; set; }
+917300-	public override CipherMode Mode { get; set; }
+917301-	public override PaddingMode Padding { get; set; }
+917302-
+917303-	// Methods
+917304-
+917305-	// RVA: 0x60EF208 Offset: 0x60EF208 VA: 0x60EF208
+--
+917365-
+917366-// Namespace: System.Security.Cryptography
+917367:public sealed class AesCryptoServiceProvider : Aes // TypeDefIndex: 14568
+917368-{
+917369-	// Properties
+917370-	public override byte[] IV { get; set; }
+917371-	public override byte[] Key { get; set; }
+917372-	public override int KeySize { get; set; }
+917373-	public override int FeedbackSize { get; set; }
+917374-	public override CipherMode Mode { get; set; }
+917375-	public override PaddingMode Padding { get; set; }
+917376-
+917377-	// Methods
+917378-
+917379-	// RVA: 0x60EF98C Offset: 0x60EF98C VA: 0x60EF98C
+917380-	public void .ctor() { }
+917381-
+917382-	// RVA: 0x60EF9F0 Offset: 0x60EF9F0 VA: 0x60EF9F0 Slot: 27
+--
+917439-
+917440-// Namespace: System.Security.Cryptography
+917441:internal class AesTransform : SymmetricTransform // TypeDefIndex: 14569
+917442-{
+917443-	// Fields
+917444-	private uint[] expandedKey; // 0x58
+917445-	private int Nk; // 0x60
+917446-	private int Nr; // 0x64
+917447-	private static readonly uint[] Rcon; // 0x0
+917448-	private static readonly byte[] SBox; // 0x8
+917449-	private static readonly byte[] iSBox; // 0x10
+917450-	private static readonly uint[] T0; // 0x18
+917451-	private static readonly uint[] T1; // 0x20
+917452-	private static readonly uint[] T2; // 0x28
+917453-	private static readonly uint[] T3; // 0x30
+917454-	private static readonly uint[] iT0; // 0x38
+917455-	private static readonly uint[] iT1; // 0x40
+917456-	private static readonly uint[] iT2; // 0x48
+--
+1050616-
+1050617-// Namespace: ES3Internal
+1050618:public abstract class EncryptionAlgorithm // TypeDefIndex: 17361
+1050619-{
+1050620-	// Methods
+1050621-
+1050622-	// RVA: -1 Offset: -1 Slot: 4
+1050623-	public abstract byte[] Encrypt(byte[] bytes, string password, int bufferSize);
+1050624-
+1050625-	// RVA: -1 Offset: -1 Slot: 5
+1050626-	public abstract byte[] Decrypt(byte[] bytes, string password, int bufferSize);
+1050627-
+1050628-	// RVA: -1 Offset: -1 Slot: 6
+1050629-	public abstract void Encrypt(Stream input, Stream output, string password, int bufferSize);
+1050630-
+1050631-	// RVA: -1 Offset: -1 Slot: 7
+1050632-	public abstract void Decrypt(Stream input, Stream output, string password, int bufferSize);
+1050633-
+--
+1050640-
+1050641-// Namespace: ES3Internal
+1050642:public class AESEncryptionAlgorithm : EncryptionAlgorithm // TypeDefIndex: 17362
+1050643-{
+1050644-	// Methods
+1050645-
+1050646-	// RVA: 0x3BDB06C Offset: 0x3BDB06C VA: 0x3BDB06C Slot: 4
+1050647-	public override byte[] Encrypt(byte[] bytes, string password, int bufferSize) { }
+1050648-
+1050649-	// RVA: 0x3BDB398 Offset: 0x3BDB398 VA: 0x3BDB398 Slot: 5
+1050650-	public override byte[] Decrypt(byte[] bytes, string password, int bufferSize) { }
+1050651-
+1050652-	// RVA: 0x3BDB6C4 Offset: 0x3BDB6C4 VA: 0x3BDB6C4 Slot: 6
+1050653-	public override void Encrypt(Stream input, Stream output, string password, int bufferSize) { }
+1050654-
+1050655-	// RVA: 0x3BDBC1C Offset: 0x3BDBC1C VA: 0x3BDBC1C Slot: 7
+1050656-	public override void Decrypt(Stream input, Stream output, string password, int bufferSize) { }
+1050657-
+--
+1050661-
+1050662-// Namespace: ES3Internal
+1050663:public class UnbufferedCryptoStream : MemoryStream // TypeDefIndex: 17363
+1050664-{
+1050665-	// Fields
+1050666-	private readonly Stream stream; // 0x50
+1050667-	private readonly bool isReadStream; // 0x58
+1050668-	private string password; // 0x60
+1050669-	private int bufferSize; // 0x68
+1050670-	private EncryptionAlgorithm alg; // 0x70
+1050671-	private bool disposed; // 0x78
+1050672-
+1050673-	// Methods
+1050674-
+1050675-	// RVA: 0x3BDC1C0 Offset: 0x3BDC1C0 VA: 0x3BDC1C0
+1050676-	public void .ctor(Stream stream, bool isReadStream, string password, int bufferSize, EncryptionAlgorithm alg) { }
+1050677-
+1050678-	// RVA: 0x3BDC258 Offset: 0x3BDC258 VA: 0x3BDC258 Slot: 18
+--
+1070030-
+1070031-// Namespace: ExitGames.Client.Photon.Encryption
+1070032:public class EncryptorNet : IPhotonEncryptor // TypeDefIndex: 17735
+1070033-{
+1070034-	// Methods
+1070035-
+1070036-	// RVA: 0x600DC30 Offset: 0x600DC30 VA: 0x600DC30 Slot: 4
+1070037-	public void Init(byte[] encryptionSecret, byte[] hmacSecret, byte[] ivBytes, bool chainingModeGCM = False, int mtu = 1200) { }
+1070038-
+1070039-	// RVA: 0x600DC68 Offset: 0x600DC68 VA: 0x600DC68 Slot: 5
+1070040-	public void Encrypt2(byte[] data, int len, byte[] header, byte[] output, int outOffset, ref int outSize) { }
+1070041-
+1070042-	// RVA: 0x600DCA0 Offset: 0x600DCA0 VA: 0x600DCA0 Slot: 6
+1070043-	public byte[] Decrypt2(byte[] data, int offset, int len, byte[] header, out int outLen) { }
+1070044-
+1070045-	// RVA: 0x600DCD8 Offset: 0x600DCD8 VA: 0x600DCD8 Slot: 7
+1070046-	public int CalculateEncryptedSize(int unencryptedSize) { }
+1070047-
+--
+1070054-
+1070055-// Namespace: Photon.SocketServer.Security
+1070056:internal class DiffieHellmanCryptoProvider : ICryptoProvider, IDisposable // TypeDefIndex: 17736
+1070057-{
+1070058-	// Fields
+1070059-	private static readonly BigInteger primeRoot; // 0x0
+1070060-	private readonly BigInteger prime; // 0x10
+1070061-	private readonly BigInteger secret; // 0x20
+1070062-	private readonly BigInteger publicKey; // 0x30
+1070063-	private Rijndael crypto; // 0x40
+1070064-	private byte[] sharedKey; // 0x48
+1070065-
+1070066-	// Properties
+1070067-	public byte[] PublicKey { get; }
+1070068-
+1070069-	// Methods
+1070070-
+1070071-	// RVA: 0x600DD50 Offset: 0x600DD50 VA: 0x600DD50
+--
+1232759-
+1232760-// Namespace: 
+1232761:public class PKCS7.EncryptedData // TypeDefIndex: 19563
+1232762-{
+1232763-	// Fields
+1232764-	private byte _version; // 0x10
+1232765-	private PKCS7.ContentInfo _content; // 0x18
+1232766-	private PKCS7.ContentInfo _encryptionAlgorithm; // 0x20
+1232767-	private byte[] _encrypted; // 0x28
+1232768-
+1232769-	// Properties
+1232770-	public PKCS7.ContentInfo EncryptionAlgorithm { get; }
+1232771-	public byte[] EncryptedContent { get; }
+1232772-
+1232773-	// Methods
+1232774-
+1232775-	// RVA: 0x5C8984C Offset: 0x5C8984C VA: 0x5C8984C
+1232776-	public void .ctor() { }
+--
+1234652-
+1234653-// Namespace: Mono.Security.Cryptography
+1234654:public sealed class CryptoConvert // TypeDefIndex: 19609
+1234655-{
+1234656-	// Methods
+1234657-
+1234658-	// RVA: 0x5C9D4C0 Offset: 0x5C9D4C0 VA: 0x5C9D4C0
+1234659-	public static string ToHex(byte[] input) { }
+1234660-}
+1234661-
+1234662-// Namespace: Mono.Security.Cryptography
+1234663-public abstract class MD2 : HashAlgorithm // TypeDefIndex: 19610
+1234664-{
+1234665-	// Methods
+1234666-
+1234667-	// RVA: 0x5C9D5FC Offset: 0x5C9D5FC VA: 0x5C9D5FC
+1234668-	protected void .ctor() { }
+1234669-
+--
+1234872-
+1234873-// Namespace: 
+1234874:public class PKCS8.EncryptedPrivateKeyInfo // TypeDefIndex: 19616
+1234875-{
+1234876-	// Fields
+1234877-	private string _algorithm; // 0x10
+1234878-	private byte[] _salt; // 0x18
+1234879-	private int _iterations; // 0x20
+1234880-	private byte[] _data; // 0x28
+1234881-
+1234882-	// Properties
+1234883-	public string Algorithm { get; }
+1234884-	public byte[] EncryptedData { get; }
+1234885-	public byte[] Salt { get; }
+1234886-	public int IterationCount { get; }
+1234887-
+1234888-	// Methods
+1234889-
+--
+1325785-
+1325786-// Namespace: Persistence.Systems
+1325787:public class NoCipherStrategy : ICipherStrategy // TypeDefIndex: 21643
+1325788-{
+1325789-	// Methods
+1325790-
+1325791-	// RVA: 0x3AFBA08 Offset: 0x3AFBA08 VA: 0x3AFBA08 Slot: 4
+1325792-	public string Encode(string data) { }
+1325793-
+1325794-	// RVA: 0x3AFBA10 Offset: 0x3AFBA10 VA: 0x3AFBA10 Slot: 5
+1325795-	public string Decode(string encodedData) { }
+1325796-
+1325797-	// RVA: 0x3AFBA18 Offset: 0x3AFBA18 VA: 0x3AFBA18
+1325798-	public void .ctor() { }
+1325799-}
+1325800-
+1325801-// Namespace: Persistence.Systems
+1325802:public class PaddedUTFEncodingStrategy : ICipherStrategy // TypeDefIndex: 21644
+1325803-{
+1325804-	// Fields
+1325805-	private readonly string pad; // 0x10
+1325806-
+1325807-	// Methods
+1325808-
+1325809-	// RVA: 0x3AFBA20 Offset: 0x3AFBA20 VA: 0x3AFBA20
+1325810-	public void .ctor(string pad) { }
+1325811-
+1325812-	// RVA: 0x3AFBA48 Offset: 0x3AFBA48 VA: 0x3AFBA48 Slot: 4
+1325813-	public string Encode(string data) { }
+1325814-
+1325815-	// RVA: 0x3AFBAE4 Offset: 0x3AFBAE4 VA: 0x3AFBAE4 Slot: 5
+1325816-	public string Decode(string encodedData) { }
+1325817-}
